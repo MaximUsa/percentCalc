@@ -1,9 +1,10 @@
 export function maximumSalesCalc(items) {
-    let percent = 0.05;
+    const percent = 0.05;
+    const minimumExpenses = 10000;
     let total = 0;
 
     for (let item of items) {
-        if (item > 10000) {
+        if (item > minimumExpenses) {
             total = total + item;
         }
     }
