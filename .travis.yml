@@ -1,1 +1,14 @@
-lan
+language: node_js
+node_js:
+  - 10
+after_success:
+  - mkdir dist
+  -cp -R scr/index.html src/js dist
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: dist
+  on:
+    branch: master
